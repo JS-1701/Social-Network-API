@@ -1,7 +1,7 @@
-import { Schenma, model, Types, Document } from "mongoose";
+import { Schema, model, Types, Document } from "mongoose";
 
 interface IReaction {
-    reactionId: string;
+    reactionId: Schema.Types.ObjectId;
     reactionBody: string;
     username: string;
     createdAt: Date;
@@ -68,4 +68,4 @@ thoughtSchema.virtual("reactionCount").get(function () {
     return this.reactions.length;
 });
 const Thought = model<IThought>("Thought", thoughtSchema);
-export default Thought;
+export { Thought };
