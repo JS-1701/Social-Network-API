@@ -1,5 +1,4 @@
-import { Schema, model, Types, Document } from "mongoose";
-
+import { Schema, model, Types, Document } from 'mongoose';
 interface IReaction {
     reactionId: Schema.Types.ObjectId;
     reactionBody: string;
@@ -10,7 +9,7 @@ interface IThought extends Document {
     thoughtText: string;
     createdAt: Date;
     username: string;
-    reactions: IReaction[];
+    reactions: IReaction[]; // Updated to match the nested schema
 }
 const reactionSchema = new Schema<IReaction>(
     {
@@ -30,6 +29,7 @@ const reactionSchema = new Schema<IReaction>(
         createdAt: {
             type: Date,
             default: Date.now,
+            /*get: (timestamp: Date | undefined) => (timestamp ? new Date(timestamp).toLocaleDateString() : ''),*/
         },
     },
     {
@@ -49,6 +49,7 @@ const thoughtSchema = new Schema<IThought>(
         createdAt: {
             type: Date,
             default: Date.now,
+            /*get: (timestamp: Date | undefined) => (timestamp ? new Date(timestamp).toLocaleDateString() : ''),*/
         },
         username: {
             type: String,
@@ -64,8 +65,8 @@ const thoughtSchema = new Schema<IThought>(
         id: false,
     }
 );
-thoughtSchema.virtual("reactionCount").get(function () {
+thoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
 });
-const Thought = model<IThought>("Thought", thoughtSchema);
+const Thought = model<IThought>('Thought', thoughtSchema);
 export { Thought };
