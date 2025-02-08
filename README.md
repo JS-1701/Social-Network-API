@@ -68,9 +68,6 @@ To test the API, you can use **Insomnia**, **Postman**, or a similar API testing
 - **Mongoose** - ODM (Object Data Modeling) library for MongoDB
 - **JavaScript Date Object** - Used for timestamp formatting
 
-## Walkthrough Video
-A walkthrough video demonstrating the API functionality can be found here: 
-[Watch the walkthrough video](#) *(Replace `#` with your actual video link)*
 
 ## Contribution
 Thanks to **OpenAI** and my **classmates** for their help and guidance in with this project.
