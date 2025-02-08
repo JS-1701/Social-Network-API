@@ -28,9 +28,9 @@ To install and run the application locally, follow these steps:
    ```
 4. Start the application:
    ```sh
-   npm start
+   npm run build
    ```
-   *(or use `nodemon` for automatic restarts during development: `npm run dev`)*
+
 
 ## Usage
 This API allows users to:
